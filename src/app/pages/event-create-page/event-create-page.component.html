@@ -1,3 +1,5 @@
+<h1>Publish a new event</h1>
+
 <app-event-form [feedbackEnabled]="feedbackEnabled" [processing]="processing" [error]="error" (submitdata)="handleSubmitForm($event)"></app-event-form>
 <div class="field" *ngIf="error">
   <p class="validation">{{error}}</p>

@@ -16,8 +16,10 @@ export class EventFormComponent implements OnInit {
 
   @Output() submitdata: EventEmitter<any> = new EventEmitter();
 
-  musics = ['Classic', 'Folklore', 'Jazz', 'Pop', 'Rap', 'Rock', 'Other'];
+  musics = ['classic', 'folklore', 'jazz', 'pop', 'rap', 'rock', 'other'];
+  selectedMusic; // --- indicate the option choosed
 
+  // In form => [(ngModel)]="event.musicType" <- sends the value to event object, musicType is same value from backend
 
   constructor(private eventService: EventService, private router: Router) { 
     this.event = {};

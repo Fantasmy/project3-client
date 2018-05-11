@@ -1,0 +1,116 @@
+@import "base.mixins";
+
+html {
+  background: $color1;
+  color: $color4;
+}
+
+a {
+  color: $color3;
+
+  @include hocus() {
+    color: $color5;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0; line-height: 1.3;
+}
+
+.header {
+  background: blue;
+}
+
+.container {
+  padding: 24px;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px dotted blue;
+}
+
+.center {
+  text-align: center;
+}
+
+.grid {
+  font-size: 0;
+
+  .col {
+    box-sizing: border-box;
+
+    border: 1px dotted red;
+
+    font-size: $base-font-size;
+
+    display: inline-block;
+    width: 100%;
+
+    &.half {
+      width: 50%;
+    }
+    &.content-a, &.content-b, &.content-c, &.content-d {
+      width: 100%;
+      padding: 20px;
+    } 
+
+    // desktop responsive styles
+    @media only screen and (min-width: 900px) {
+      &.content-a, &.content-b, &.content-c, &.content-d {
+        width: 25%;
+      } 
+      .btn {
+        text-align: center;
+        display: inline-block;
+      }
+    }
+
+    // tablet responsive styles
+    @media only screen and (max-width: 600px) {
+      &.content-a, &.content-b, &.content-c, &.content-d {
+        width: 50%;
+      } 
+      .half {
+        width: 100%;
+      }
+    }
+
+    &.content-a {
+      background: rgb(38, 160, 160);
+    }
+    &.content-b {
+      background: rgb(141, 40, 40);
+    }
+    &.content-c {
+      background: rgb(44, 218, 67);
+    }
+    &.content-d {
+      background: rgb(221, 195, 46);
+    }
+
+  }
+}
+
+.btn {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+

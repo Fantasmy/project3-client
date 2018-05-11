@@ -2,16 +2,16 @@
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && titleField.errors}">
     <label>Title</label>
-    <input type="text" name="title" [(ngModel)]="title" #titleField="ngModel" required minlength="6" [disabled]="processing"/>
+    <input type="text" name="title" [(ngModel)]="event.title" #titleField="ngModel" required minlength="4" [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && titleField.errors">
       <p *ngIf="titleField.errors.required" class="validation">title required</p>
       <p *ngIf="titleField.errors.minlength" class="validation">title is too short</p>
     </div>
   </div>
 
-  <div class="field" [ngClass]="{'has-error': feedbackEnabled && dateField.errors}">
+  <!-- <div class="field" [ngClass]="{'has-error': feedbackEnabled && dateField.errors}">
     <label>Date</label>
-    <input type="text" name="date" [(ngModel)]="date" #dateField="ngModel" required minlength="6" [disabled]="processing"/>
+    <input type="text" name="date" [(ngModel)]="date" #dateField="ngModel" required minlength="4" [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && dateField.errors">
       <p *ngIf="dateField.errors.required" class="validation">date required</p>
       <p *ngIf="dateField.errors.minlength" class="validation">date is too short</p>
@@ -20,23 +20,23 @@
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && timeField.errors}">
     <label>Time</label>
-    <input type="text" name="time" [(ngModel)]="time" #timeField="ngModel" required minlength="6" [disabled]="processing"/>
+    <input type="text" name="time" [(ngModel)]="time" #timeField="ngModel" required minlength="4" [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && timeField.errors">
       <p *ngIf="timeField.errors.required" class="validation">time required</p>
       <p *ngIf="timeField.errors.minlength" class="validation">time is too short</p>
     </div>
-  </div>
+  </div> -->
 
   <div class="field">
     <label>Type of music</label>
-    <select class="form-control" id="power" required>
+    <select name="music-type" class="form-control" id="music" [(ngModel)]="event.musicType" required>
       <option *ngFor="let music of musics" [value]="music">{{music}}</option>
     </select>
   </div>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && descriptionField.errors}">
     <label>Description</label>
-    <input type="text" name="description" [(ngModel)]="description" #descriptionField="ngModel" required minlength="6" [disabled]="processing"/>
+    <input type="text" name="description" [(ngModel)]="event.description" #descriptionField="ngModel" required minlength="4" [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && descriptionField.errors">
       <p *ngIf="descriptionField.errors.required" class="validation">description required</p>
       <p *ngIf="descriptionField.errors.minlength" class="validation">description is too short</p>
@@ -50,3 +50,5 @@
     </div>
   </div>
 </form>
+
+--{{event | json}}--

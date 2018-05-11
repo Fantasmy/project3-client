@@ -1,3 +1,91 @@
-<p>
-  signup-page works!
-</p>
+<h1>Sign-up</h1>
+
+<form class="selection" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
+    <label>Username</label>
+    <input type="text" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="4" [disabled]="processing"/>
+    <div *ngIf="usernameField.dirty && usernameField.errors">
+      <p *ngIf="usernameField.errors.required" class="validation">username required</p>
+      <p *ngIf="usernameField.errors.minlength" class="validation">username is too short</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && passwordField.errors}">
+    <label>Password</label>
+    <input type="password" name="password" [(ngModel)]="password" #passwordField="ngModel" required minlength="4" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && passwordField.errors">
+      <p *ngIf="passwordField.errors.required" class="validation">password required</p>
+      <p *ngIf="passwordField.errors.minlength" class="validation">password is too short</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && phoneField.errors}">
+    <label>Phone</label>
+    <input type="phone" name="phone" [(ngModel)]="phone" #phoneField="ngModel" required minlength="9" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && phoneField.errors">
+      <p *ngIf="phoneField.errors.required" class="validation">phone required</p>
+      <p *ngIf="phoneField.errors.minlength" class="validation">Phone number is too short</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && websiteField.errors}">
+    <label>Website</label>
+    <input type="website" name="website" [(ngModel)]="website" #websiteField="ngModel" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && websiteField.errors">
+      <p *ngIf="websiteField.errors.required" class="validation">website required</p>
+    </div>
+  </div>
+
+  <h4>Address:</h4>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && streetField.errors}">
+    <label>Street</label>
+    <input type="street" name="street" [(ngModel)]="street" #streetField="ngModel" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && streetField.errors">
+      <p *ngIf="streetField.errors.required" class="validation">street required</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && strNumberField.errors}">
+    <label> Street Number</label>
+    <input type="strNumber" name="strNumber" [(ngModel)]="strNumber" #strNumberField="ngModel" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && strNumberField.errors">
+      <p *ngIf="strNumberField.errors.required" class="validation">strNumber required</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && postCodeField.errors}">
+    <label>Post Code</label>
+    <input type="postCode" name="postCode" [(ngModel)]="postCode" #postCodeField="ngModel" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && postCodeField.errors">
+      <p *ngIf="postCodeField.errors.required" class="validation">postCode required</p>
+      <p *ngIf="postCodeField.errors.minlength" class="validation">postCode is too short</p>
+    </div>
+  </div>
+
+  <!-- <div class="field">
+    <label>City</label>
+    <select name="music-type" class="form-control" id="music" [(ngModel)]="event.musicType" required>
+      <option *ngFor="let music of musics" [value]="music">{{music}}</option>
+    </select>
+  </div> -->
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && cityField.errors}">
+    <label>city</label>
+    <input type="city" name="city" [(ngModel)]="city" #cityField="ngModel" [disabled]="processing"/>
+    <div *ngIf="feedbackEnabled && cityField.errors">
+      <p *ngIf="cityField.errors.required" class="validation">city required</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit" [disabled]="processing">Signup</button>
+    <div *ngIf="error">
+      <p class="validation">{{error}}</p>
+    </div>
+    <div *ngIf="feedbackEnabled && form.invalid">
+      <p class="validation">there are errors in the form, please review the fields</p>
+    </div>
+  </div>
+</form>

@@ -41,8 +41,8 @@ Owner:
 - barname	: string
 - password: string
 - phone number: number
-
-- address: {
+- website: string
+- location: {
 	street: {
 		type: String,
 		required: true},
@@ -107,7 +107,7 @@ Put /events /:id
 Delete /events /:id
 
 
-ANGULAR
+ANGULAR (controllers?)
 
 PAGES:
 - home-page

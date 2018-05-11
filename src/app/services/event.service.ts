@@ -13,7 +13,7 @@ export class EventService {
     const options = {
       withCredentials: true // the client will send cookies, because cors doesn't do it automatically
     };
-    return this.httpClient.get(`${this.baseUrl}/events`, options)
+    return this.httpClient.get(`${this.baseUrl}/events`, options) // events is the backend route
       .toPromise();
   }
 
@@ -29,7 +29,7 @@ export class EventService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.baseUrl}/events`, event, options)
+    return this.httpClient.post(`${this.baseUrl}/events`, event, options) // events url and the event model object
       .toPromise();
   }
 
