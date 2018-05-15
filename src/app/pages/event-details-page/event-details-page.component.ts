@@ -35,7 +35,7 @@ export class EventDetailsPageComponent implements OnInit {
   handleDeleteClick() {
     this.eventService.deletetOne(this.idEvent)
     .then(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/events']);
     })
     .catch(err => {
       console.log(err);

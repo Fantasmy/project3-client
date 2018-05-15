@@ -20,6 +20,22 @@
     </div>
   </div>
 
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && venueField.errors}">
+      <input type="text" name="venue" id="venue" [(ngModel)]="venue" #venueField="ngModel" required minlength="4" [disabled]="processing" placeholder="venue"/>
+      <label for="venue">Bar name</label>
+      <div *ngIf="venueField.dirty && venueField.errors">
+        <p *ngIf="venueField.errors.required" class="validation">venue required</p>
+        <p *ngIf="venueField.errors.minlength" class="validation">venue is too short</p>
+      </div>
+    </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && imgUrlField.errors}">
+      <input type="imgUrl" name="imgUrl" id="imgUrl" [(ngModel)]="imgUrl" #imgUrlField="ngModel" required minlength="9" [disabled]="processing" placeholder="imge url"/>
+      <label for="imgUrl">Image</label>
+      <div *ngIf="feedbackEnabled && imgUrlField.errors">
+      </div>
+    </div>
+
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && phoneField.errors}">
     <input type="phone" name="phone" id="phone" [(ngModel)]="phone" #phoneField="ngModel" required minlength="9" [disabled]="processing" placeholder="Phone number"/>
     <label for="phone">Phone</label>

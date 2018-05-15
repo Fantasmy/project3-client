@@ -14,6 +14,8 @@ export class SignupPageComponent implements OnInit {
   processing = false;
   username: String;
   password: String;
+  venue: String;
+  imgUrl: String;
   phone: Number;
   website: String;
   location: Object;
@@ -44,6 +46,8 @@ export class SignupPageComponent implements OnInit {
       const user = {
         username: this.username,
         password: this.password,
+        venue: this.venue,
+        imgUrl: this.imgUrl,
         phone: this.phone,
         website: this.website,
         location: this.location

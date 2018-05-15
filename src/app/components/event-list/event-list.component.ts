@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-event-list',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event-list.component.scss']
 })
 export class EventListComponent implements OnInit {
+
+  events: Array<any>;
+
+  @Input() event: Object;
 
   constructor() { }
 

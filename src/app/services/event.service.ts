@@ -21,7 +21,7 @@ export class EventService {
     const options = {
       withCredentials: true // the client will send cookies, because cors doesn't do it automatically
     };
-    return this.httpClient.get(`${this.baseUrl}/events/${musicType}`, options) // events is the backend route
+    return this.httpClient.get(`${this.baseUrl}/events/by-type/${musicType}`, options) // events is the backend route
       .toPromise();
   }
 

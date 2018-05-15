@@ -36,10 +36,12 @@ MC (data models, controllers/routes)
 DATA MODELS
 
 
-Owner:
+Bar:
 - _id: objectid
 - barname	: string
 - password: string
+- venue: string
+- imgUrl: trig
 - phone number: number
 - website: string
 - location: {
@@ -121,7 +123,6 @@ PAGES:
 
 
 COMPONENTS:
-- bar-form
 - bar-card
 - event-form
 - search-form

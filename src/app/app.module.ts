@@ -24,7 +24,6 @@ import { EventFormComponent } from './components/event-form/event-form.component
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { BarCardComponent } from './components/bar-card/bar-card.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
-import { BarFormComponent } from './components/bar-form/bar-form.component';
 import { EventListComponent } from './components/event-list/event-list.component';
 
 
@@ -60,7 +59,6 @@ const routes: Routes = [
     BarCardComponent,
     EventCardComponent,
     EventCreatePageComponent,
-    BarFormComponent,
     StyleguidePageComponent,
     SignupPageComponent,
     LoginPageComponent,
