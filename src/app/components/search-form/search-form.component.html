@@ -26,12 +26,12 @@
       <!-- <div class="col title">
         <label>What do you feel for today?</label>
       </div> -->
-      <div class="col">
+      <div class="col search">
         <select name="music-type" class="btn btn-blue" id="music" [(ngModel)]="selectedMusic">
           <option *ngFor="let music of musics" [value]="music">{{music}}</option>
         </select>
       </div>
-      <div class="col">
+      <div class="col search">
         <button type="submit" class="btn btn-blue" [disabled]="processing">Search</button>
       </div>
       <div *ngIf="feedbackEnabled && form.invalid">

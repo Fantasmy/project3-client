@@ -85,8 +85,12 @@ h1, h2, h3, h4, h5, h6, p {
 
     // desktop responsive styles
     @media only screen and (min-width: 900px) {
-      &.pic, &.title, &.music, &.description, &.detail, &.col {
+      &.pic, &.title, &.music, &.description, &.detail, &.search {
         width: 25%;
+      }
+      &.search {
+        width: 25%;
+        padding: 5px;
       }
       &.content-a, &.content-b, &.content-c, &.content-d {
         width: 25%;
