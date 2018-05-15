@@ -1,6 +1,6 @@
-<p>
-  search-form works!
-</p>
+<h2>
+  What do you feel for today?
+</h2>
 <div class="grid center">
   <form (ngSubmit)="searchEvents(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
@@ -22,24 +22,24 @@
       </div>
     </div> -->
 
-    <div class="field">
-      <div class="col title">
-        <label>Type of music</label>
-      </div>
+    <div>
+      <!-- <div class="col title">
+        <label>What do you feel for today?</label>
+      </div> -->
       <div class="col music">
         <select name="music-type" class="form-control" id="music" [(ngModel)]="selectedMusic">
           <option *ngFor="let music of musics" [value]="music">{{music}}</option>
         </select>
       </div>
-    </div>
-    <div class="col detail">
-      <div class="field submit">
+      <div class="col title">
         <button type="submit" [disabled]="processing">Search</button>
       </div>
       <div *ngIf="feedbackEnabled && form.invalid">
         <p class="validation">there are errors in the form, please review the fields</p>
+        <!-- </div> -->
       </div>
     </div>
+    <!-- <div> -->
   </form>
 </div>
 <!-- -{{event | json}}- -->
