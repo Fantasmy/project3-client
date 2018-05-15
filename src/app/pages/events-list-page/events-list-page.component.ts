@@ -22,4 +22,8 @@ export class EventsListPageComponent implements OnInit {
       });
   }
 
+  toTop() {
+    window.scrollTo ( 0, 0 );
+  }
+
 }

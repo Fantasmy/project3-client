@@ -2,15 +2,15 @@
 
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && imageField.errors}">
-    <input type="text" name="image" [(ngModel)]="event.imgUrl" #imageField="ngModel" [disabled]="processing" placeholder="Image url"/>
-    <label>Image</label>
+    <input type="text" name="image" id="image" [(ngModel)]="event.imgUrl" #imageField="ngModel" [disabled]="processing" placeholder="Image url"/>
+    <label for="image">Image</label>
     <div *ngIf="feedbackEnabled && imageField.errors">
     </div>
   </div>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && titleField.errors}">
-    <input type="text" name="title" [(ngModel)]="event.title" #titleField="ngModel" required minlength="4" [disabled]="processing" placeholder="Artist name?"/>
-    <label>Title</label>
+    <input type="text" name="title" id="title" [(ngModel)]="event.title" #titleField="ngModel" required minlength="4" [disabled]="processing" placeholder="Artist name?"/>
+    <label for="title">Title</label>
     <div *ngIf="feedbackEnabled && titleField.errors">
       <p *ngIf="titleField.errors.required" class="validation">title required</p>
       <p *ngIf="titleField.errors.minlength" class="validation">title is too short</p>
@@ -39,12 +39,12 @@
     <select name="music-type" class="form-control" id="music" [(ngModel)]="event.musicType">
       <option *ngFor="let music of musics" [value]="music">{{music}}</option>
     </select>
-    <label>Type of music</label>
+    <label for="music">Type of music</label>
   </div>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && descriptionField.errors}">
-    <input type="textarea" name="description" [(ngModel)]="event.description" #descriptionField="ngModel" required minlength="4" [disabled]="processing" placeholder="Description"/>
-    <label>Description</label>
+    <input type="textarea" name="description" id="description" [(ngModel)]="event.description" #descriptionField="ngModel" required minlength="4" [disabled]="processing" placeholder="Description"/>
+    <label for="description">Description</label>
     <div *ngIf="feedbackEnabled && descriptionField.errors">
     </div>
   </div>

@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <h3>Address:</h3>
+  <label>Address:</label>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && streetField.errors}">
     <input type="street" name="street" id="street" [(ngModel)]="street" #streetField="ngModel" [disabled]="processing" placeholder="Street"/>

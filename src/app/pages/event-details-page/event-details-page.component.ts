@@ -39,6 +39,6 @@ export class EventDetailsPageComponent implements OnInit {
     })
     .catch(err => {
       console.log(err);
-    })
+    });
     }
 }

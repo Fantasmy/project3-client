@@ -19,3 +19,45 @@
   &:-ms-input-placeholder { @content; }
   &::-webkit-input-placeholder { @content; }
 }
+
+
+/*
+ * Mixin to compensate for the height of the admin bar 
+ */
+ 
+ @mixin admin-sticky-fix( $offset: 0 ) {
+  $narrow-offset: 46px;
+  $wide-offset: 32px;
+  @if $offset != 0 and type-of($offset) == 'number' {
+    $narrow-offset: $narrow-offset + $offset;
+    $wide-offset: $wide-offset + $offset;
+  }
+  .admin-bar & {
+    top: $narrow-offset;
+    @media screen and (min-width: 783px) {
+      top: $wide-offset;
+    }
+  }
+  
+  offset-type: type-of($offset);
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+
+  @include admin-sticky-fix;
+}
+.sticky-header-offset {
+  position: fixed;
+  top: 10px;
+
+  @include admin-sticky-fix(20px);
+}
+
+.sticky-header-fake-offset {
+  position: fixed;
+  top: 10px;
+
+  @include admin-sticky-fix(dumb);
+}

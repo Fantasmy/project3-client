@@ -5,6 +5,18 @@ html {
   color: $color4;
 }
 
+nav a {
+  text-decoration: none;
+}
+
+input {
+  display: block;
+}
+
+button a {
+  display: block;
+}
+
 a {
   color: $color3;
 
@@ -165,4 +177,49 @@ textarea {
     @include input-placeholder {
         color: grey;
     }
+}
+
+
+/// -- sticky header --- ///
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  offset-type: number;
+}
+.admin-bar .sticky-header {
+  top: 46px;
+}
+@media screen and (min-width: 783px) {
+  .admin-bar .sticky-header {
+    top: 32px;
+  }
+}
+
+.sticky-header-offset {
+  position: fixed;
+  top: 10px;
+  offset-type: number;
+}
+.admin-bar .sticky-header-offset {
+  top: 66px;
+}
+@media screen and (min-width: 783px) {
+  .admin-bar .sticky-header-offset {
+    top: 52px;
+  }
+}
+
+.sticky-header-fake-offset {
+  position: fixed;
+  top: 10px;
+  offset-type: string;
+}
+.admin-bar .sticky-header-fake-offset {
+  top: 46px;
+}
+@media screen and (min-width: 783px) {
+  .admin-bar .sticky-header-fake-offset {
+    top: 32px;
+  }
 }
