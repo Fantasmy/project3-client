@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class EventFormComponent implements OnInit {
 
-  @Input() feedbackEnabled: boolean; 
+  @Input() feedbackEnabled: boolean;
   @Input() error: string;
   @Input() processing: boolean;
   @Input() event: any;

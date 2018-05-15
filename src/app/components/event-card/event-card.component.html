@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="grid center">
+
+      <div *ngIf="!event">
+        <h1>Loading ....</h1>
+      </div>
+
+      <div class="card" *ngIf="event">
+        <div class="col pic">
+          <img src="{{event.imgUrl}}" />
+        </div>
+        <div>
+          <div class="col title">
+            <h3>Title:</h3>
+              <p>{{event.title}}</p>
+          </div>
+          <div class="col music">
+            <h3>Music:</h3>
+              <p>{{event.musicType}}</p>
+          </div>
+          <!-- <h3>Date</h3>
+  <h3>Time</h3> -->
+          <div class="col description">
+            <h3>Description:</h3>
+              <p>{{event.description}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

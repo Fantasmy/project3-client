@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { EventService } from '../../services/event.service';
 
 @Component({
   selector: 'app-events-list-page',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsListPageComponent implements OnInit {
 
-  constructor() { }
+  events: Array<any>;
+  user: Object;
+
+  constructor(private authService: AuthService, private eventService: EventService) { }
 
   ngOnInit() {
+    this.user = this.authService.getUser();
+    this.eventService.listAll()
+      .then((data) => {
+        this.events = data;
+      });
   }
 
 }

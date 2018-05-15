@@ -1,3 +1,23 @@
-<p>
-  events-list-page works!
-</p>
+<h1>All the events</h1>
+
+<div class="container">
+  <div class="wrapper">
+    <div class="grid center">
+      <!-- <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+    <div *ngIf="!!user">
+      <a [routerLink]="['/events/create']">Create</a>
+    </div>
+  </div> -->
+  <ul *ngFor="let event of events">
+      <div class="inline-svg">
+        <li>
+          <app-event-card [event]="event"></app-event-card>
+        </li>
+        <div class="col detail">
+          <a [routerLink]="['/events', event._id]">Detail</a>
+        </div>
+      </div>
+      </ul>
+    </div>
+  </div>
+</div>

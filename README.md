@@ -66,6 +66,7 @@ For maps:
 
 Event:
 - bar_host: ObjectId 
+- image: srcUrl
 - title: string
 - date: Date
 - time: time

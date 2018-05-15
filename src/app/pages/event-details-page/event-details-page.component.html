@@ -1,3 +1,13 @@
-<p>
-  event-details-page works!
-</p>
+<ng-container *ngIf="!event">
+  Loading ...
+</ng-container>
+
+<ng-container *ngIf="event">
+  <app-event-card [event]="event"></app-event-card>
+  <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+    <div *ngIf="!!user">
+      <a [routerLink]="['/events', event._id, 'edit']">Edit</a>
+      <button class="btn" (click)="handleDeleteClick()">Delete</button>
+    </div>
+  </div>
+</ng-container>

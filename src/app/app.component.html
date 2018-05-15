@@ -1,7 +1,32 @@
-<header id="site-header">
-  <div class="container">
+<body>
 
-    <nav class="site-nav">
+  <header id="site-header">
+    <div class="container">
+
+      <nav class="site-nav">
+        <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+          <div *ngIf="loading">
+            <span class="username text">loading...</span>
+          </div>
+          <div *ngIf="!loading && anon">
+            <a [routerLink]="['/']"> Home </a>
+            <a [routerLink]="['/']"> Search </a>
+            <a [routerLink]="['events']"> Events </a>
+            <a [routerLink]="['signup']"> Sign up </a>
+            <a [routerLink]="['login']"> Login </a>
+          </div>
+          <div *ngIf="!loading && !!user">
+            <a [routerLink]="['/']"> Home </a>
+            <a [routerLink]="['/']"> Search </a>
+            <a [routerLink]="['events']"> Events </a>
+            <a [routerLink]="['create']"> Create </a>
+            <a [routerLink]="['/profile']">{{user.username}}</a>
+            <a (click)="logout()">logout</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- <nav class="site-nav">
       <div [ngClass]="{'is-user': user, 'is-anon': anon}">
         <div *ngIf="loading">
           <span class="username text">loading...</span>
@@ -21,17 +46,19 @@
           <a [routerLink]="['login']"> Login </a>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
+    </div>
+  </header>
+
+  <div id="site-main" class="container">
+    <router-outlet></router-outlet>
   </div>
-</header>
 
-<div id="site-main" class="container">
-  <router-outlet></router-outlet>
-</div>
+  <footer id="site-footer">
+    <div class="container">
+      &copy; Jenny. liveBeats 2018
+    </div>
+  </footer>
 
-<footer id="site-footer">
-  <div class="container">
-    &copy; Jenny. liveBeats 2018
-  </div>
-</footer>
+</body>

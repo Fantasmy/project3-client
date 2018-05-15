@@ -1,7 +1,11 @@
 //
-//  Spectral font
+//  Spectral font and Lobster font
 //
 
 @import url('https://fonts.googleapis.com/css?family=Spectral:300,400,500,700');
 
-body { font-family: 'Spectral', serif; }
+body, p, nav { font-family: 'Spectral', serif; }
+
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+
+header,h1, h2, h3, h4, h5, h6, label { font-family: 'Lobster', cursive; }

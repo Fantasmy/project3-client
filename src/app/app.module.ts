@@ -21,9 +21,10 @@ import { StyleguidePageComponent } from './pages/styleguide-page/styleguide-page
 
 // --- components
 import { EventFormComponent } from './components/event-form/event-form.component';
-import { BarCardComponent } from './components/bar-card/bar-card.component';
-import { BarFormComponent } from './components/bar-form/bar-form.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
+import { BarCardComponent } from './components/bar-card/bar-card.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
+import { BarFormComponent } from './components/bar-form/bar-form.component';
 import { EventListComponent } from './components/event-list/event-list.component';
 
 
@@ -40,15 +41,15 @@ import { AuthService } from './services/auth.service';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full',  canActivate: [ InitAuthGuardService ]  },
-  { path: 'home',  component: HomePageComponent,  canActivate: [ InitAuthGuardService ]  },
-  { path: 'events',  component: EventsListPageComponent,  canActivate: [ InitAuthGuardService ]  },
-  { path: 'signup',  component: SignupPageComponent,  canActivate: [ RequireAnonGuardService ]  },
-  { path: 'login',  component: LoginPageComponent,  canActivate: [ RequireAnonGuardService ]  },
-  // { path: 'events',  component: EventsListPageComponent },
-  // { path: 'event/:id', component: EventDetailPageComponent },
-  { path: 'create',  component: EventCreatePageComponent },
-  { path: 'styleguide',  component: StyleguidePageComponent }
+  { path: '', redirectTo: 'home', pathMatch: 'full',  canActivate: [ InitAuthGuardService ] },
+  { path: 'home',  component: HomePageComponent,  canActivate: [ InitAuthGuardService ] },
+  { path: 'events',  component: EventsListPageComponent,  canActivate: [ InitAuthGuardService ] },
+  { path: 'signup',  component: SignupPageComponent,  canActivate: [ RequireAnonGuardService ] },
+  { path: 'login',  component: LoginPageComponent,  canActivate: [ RequireAnonGuardService ] },
+  { path: 'events/:id', component: EventDetailsPageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: 'events/:id/edit', component: EventEditPageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'create',  component: EventCreatePageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'styleguide',  component: StyleguidePageComponent, canActivate: [ InitAuthGuardService ] }
 ];
 
 @NgModule({
@@ -57,6 +58,7 @@ const routes: Routes = [
     HomePageComponent,
     EventFormComponent,
     BarCardComponent,
+    EventCardComponent,
     EventCreatePageComponent,
     BarFormComponent,
     StyleguidePageComponent,
@@ -68,6 +70,7 @@ const routes: Routes = [
     SearchFormComponent,
     EventListComponent,
     EventsListPageComponent,
+    EventCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,11 +79,11 @@ const routes: Routes = [
     HttpClientModule
   ],
   providers: [
-    EventService, 
-    BarService, 
-    AuthService, 
-    InitAuthGuardService, 
-    RequireAnonGuardService, 
+    EventService,
+    BarService,
+    AuthService,
+    InitAuthGuardService,
+    RequireAnonGuardService,
     RequireUserGuardService
   ],
   bootstrap: [AppComponent]

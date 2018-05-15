@@ -1,8 +1,16 @@
 <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && imageField.errors}">
+    <input type="text" name="image" [(ngModel)]="event.imgUrl" #imageField="ngModel" [disabled]="processing" placeholder="Image url"/>
+    <label>Image</label>
+    <div *ngIf="feedbackEnabled && imageField.errors">
+    </div>
+  </div>
+
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && titleField.errors}">
+    <input type="text" name="title" [(ngModel)]="event.title" #titleField="ngModel" required minlength="4" [disabled]="processing" placeholder="Artist name?"/>
     <label>Title</label>
-    <input type="text" name="title" [(ngModel)]="event.title" #titleField="ngModel" required minlength="4" [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && titleField.errors">
       <p *ngIf="titleField.errors.required" class="validation">title required</p>
       <p *ngIf="titleField.errors.minlength" class="validation">title is too short</p>
@@ -28,18 +36,16 @@
   </div> -->
 
   <div class="field">
-    <label>Type of music</label>
-    <select name="music-type" class="form-control" id="music" [(ngModel)]="event.musicType" required>
+    <select name="music-type" class="form-control" id="music" [(ngModel)]="event.musicType">
       <option *ngFor="let music of musics" [value]="music">{{music}}</option>
     </select>
+    <label>Type of music</label>
   </div>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && descriptionField.errors}">
+    <input type="textarea" name="description" [(ngModel)]="event.description" #descriptionField="ngModel" required minlength="4" [disabled]="processing" placeholder="Description"/>
     <label>Description</label>
-    <input type="text" name="description" [(ngModel)]="event.description" #descriptionField="ngModel" required minlength="4" [disabled]="processing"/>
     <div *ngIf="feedbackEnabled && descriptionField.errors">
-      <p *ngIf="descriptionField.errors.required" class="validation">description required</p>
-      <p *ngIf="descriptionField.errors.minlength" class="validation">description is too short</p>
     </div>
   </div>
 
@@ -51,4 +57,4 @@
   </div>
 </form>
 
---{{event | json}}--
+<!-- {{event | json}} -->

@@ -49,7 +49,7 @@ export class SignupPageComponent implements OnInit {
         location: this.location
       }
 
-      console.log(user.location)
+      // console.log(user.location)
 
       this.authService.signup(user)
         .then((result) => {
