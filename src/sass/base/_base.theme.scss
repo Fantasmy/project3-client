@@ -39,6 +39,7 @@ h1, h2, h3, h4, h5, h6, p {
   background: blue;
 }
 
+
 .container {
   padding: 24px;
 }
@@ -84,7 +85,7 @@ h1, h2, h3, h4, h5, h6, p {
 
     // desktop responsive styles
     @media only screen and (min-width: 900px) {
-      &.pic, &.title, &.music, &.description, &.detail {
+      &.pic, &.title, &.music, &.description, &.detail, &.col {
         width: 25%;
       }
       &.content-a, &.content-b, &.content-c, &.content-d {

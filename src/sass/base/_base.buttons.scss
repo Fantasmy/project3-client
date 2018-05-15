@@ -47,3 +47,43 @@
 
 // -- back to top --- //
 
+
+
+
+/// --- buttons with hover --- ///
+
+.btn {
+  color:white;
+  text-decoration:none;
+  width: 95%;
+  padding:5px 10px;
+  border-radius:3px;
+  font-family: 'Poiret One', cursive;
+  font-size: $font-large;
+  // font-size:2em;
+ }
+ 
+ .btn-green {
+    @include button-bg(#2ecc71);
+ }
+ 
+ .btn-blue {
+    @include button-bg(#2286D1);
+    // @include button-bg(#3498db);
+ }
+ 
+ .btn-yellow{
+    @include button-bg(#f1c40f);
+ }
+ 
+ .btn-red {
+    @include button-bg(#e74c3c);
+ }
+ 
+ /*Other Stylez*/
+ .wrap {
+   margin:0 auto;
+   width:800px;
+   text-align:center;
+ }
+

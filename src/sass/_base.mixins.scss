@@ -42,22 +42,13 @@
   offset-type: type-of($offset);
 }
 
-.sticky-header {
-  position: fixed;
-  top: 0;
-
-  @include admin-sticky-fix;
-}
-.sticky-header-offset {
-  position: fixed;
-  top: 10px;
-
-  @include admin-sticky-fix(20px);
-}
-
-.sticky-header-fake-offset {
-  position: fixed;
-  top: 10px;
-
-  @include admin-sticky-fix(dumb);
+@mixin button-bg($bg) {
+  background: $bg;
+  &:hover {
+    background:darken($bg,8%);
+    transition: all 0.3s ease;
+  }
+  &:active {
+    background:darken($bg,25%);
+  } 
 }

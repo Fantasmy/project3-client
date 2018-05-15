@@ -1,6 +1,7 @@
-<h1>Sign-up</h1>
 
 <form class="selection" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+    
+  <h1>Sign-up</h1>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && usernameField.errors}">
     <input type="text" name="username" id="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="4" [disabled]="processing" placeholder="Username"/>
@@ -21,26 +22,25 @@
   </div>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && venueField.errors}">
-      <input type="text" name="venue" id="venue" [(ngModel)]="venue" #venueField="ngModel" required minlength="4" [disabled]="processing" placeholder="venue"/>
+      <input type="text" name="venue" id="venue" [(ngModel)]="venue" #venueField="ngModel" required minlength="1" [disabled]="processing" placeholder="venue"/>
       <label for="venue">Bar name</label>
       <div *ngIf="venueField.dirty && venueField.errors">
-        <p *ngIf="venueField.errors.required" class="validation">venue required</p>
-        <p *ngIf="venueField.errors.minlength" class="validation">venue is too short</p>
+        <p *ngIf="venueField.errors.required" class="validation">venue name required</p>
+        <p *ngIf="venueField.errors.minlength" class="validation">venue name is too short</p>
       </div>
     </div>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && imgUrlField.errors}">
-      <input type="imgUrl" name="imgUrl" id="imgUrl" [(ngModel)]="imgUrl" #imgUrlField="ngModel" required minlength="9" [disabled]="processing" placeholder="imge url"/>
+      <input type="imgUrl" name="imgUrl" id="imgUrl" [(ngModel)]="imgUrl" #imgUrlField="ngModel" minlength="9" [disabled]="processing" placeholder="imge url"/>
       <label for="imgUrl">Image</label>
       <div *ngIf="feedbackEnabled && imgUrlField.errors">
       </div>
     </div>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && phoneField.errors}">
-    <input type="phone" name="phone" id="phone" [(ngModel)]="phone" #phoneField="ngModel" required minlength="9" [disabled]="processing" placeholder="Phone number"/>
+    <input type="phone" name="phone" id="phone" [(ngModel)]="phone" #phoneField="ngModel" minlength="9" [disabled]="processing" placeholder="Phone number"/>
     <label for="phone">Phone</label>
     <div *ngIf="feedbackEnabled && phoneField.errors">
-      <p *ngIf="phoneField.errors.required" class="validation">phone required</p>
       <p *ngIf="phoneField.errors.minlength" class="validation">Phone number is too short</p>
     </div>
   </div>
@@ -49,7 +49,6 @@
     <input type="website" name="website" id="website" [(ngModel)]="website" #websiteField="ngModel" [disabled]="processing" placeholder="Your website"/>
     <label for="website">Website</label>
     <div *ngIf="feedbackEnabled && websiteField.errors">
-      <p *ngIf="websiteField.errors.required" class="validation">website required</p>
     </div>
   </div>
 
@@ -59,7 +58,7 @@
     <input type="street" name="street" id="street" [(ngModel)]="street" #streetField="ngModel" [disabled]="processing" placeholder="Street"/>
     <label for="street">Street</label>
     <div *ngIf="feedbackEnabled && streetField.errors">
-      <p *ngIf="streetField.errors.required" class="validation">street required</p>
+      <p *ngIf="streetField.errors.required" class="validation">Street name required</p>
     </div>
   </div>
 
@@ -67,7 +66,7 @@
     <input type="strNumber" name="strNumber" id="strNumber" [(ngModel)]="strNumber" #strNumberField="ngModel" [disabled]="processing" placeholder="Street number"/>
     <label for="strNumber"> Street Number</label>
     <div *ngIf="feedbackEnabled && strNumberField.errors">
-      <p *ngIf="strNumberField.errors.required" class="validation">strNumber required</p>
+      <p *ngIf="strNumberField.errors.required" class="validation">Street number required</p>
     </div>
   </div>
 
@@ -75,8 +74,8 @@
     <input type="postCode" name="postCode" id="postCode" [(ngModel)]="postCode" #postCodeField="ngModel" [disabled]="processing" placeholder="Post Code"/>
     <label for="postCode">Post Code</label>
     <div *ngIf="feedbackEnabled && postCodeField.errors">
-      <p *ngIf="postCodeField.errors.required" class="validation">postCode required</p>
-      <p *ngIf="postCodeField.errors.minlength" class="validation">postCode is too short</p>
+      <p *ngIf="postCodeField.errors.required" class="validation">Post code required</p>
+      <p *ngIf="postCodeField.errors.minlength" class="validation">Post code is too short</p>
     </div>
   </div>
 
@@ -91,17 +90,17 @@
     <input type="city" name="city" id="city" [(ngModel)]="city" #cityField="ngModel" [disabled]="processing" placeholder="City"/>
     <label for="city">City</label>
     <div *ngIf="feedbackEnabled && cityField.errors">
-      <p *ngIf="cityField.errors.required" class="validation">city required</p>
+      <p *ngIf="cityField.errors.required" class="validation">City required</p>
     </div>
   </div>
 
   <div class="field submit">
-    <button type="submit" [disabled]="processing">Signup</button>
+    <button type="submit" class="btn btn-blue" [disabled]="processing">Signup</button>
     <div *ngIf="error">
       <p class="validation">{{error}}</p>
     </div>
     <div *ngIf="feedbackEnabled && form.invalid">
-      <p class="validation">there are errors in the form, please review the fields</p>
+      <p class="validation">There are errors in the form, please review the fields</p>
     </div>
   </div>
 </form>
