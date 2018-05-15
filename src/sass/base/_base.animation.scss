@@ -119,3 +119,13 @@ inline-svg {
   margin: 4em auto;
 }
 
+
+/// --- nav animation ----/////
+
+a {
+  @include transition(color .3s ease, font-size .5s ease);
+  &:hover {
+    color: black;
+    font-size: 2em;
+  }
+}
