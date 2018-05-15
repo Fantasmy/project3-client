@@ -36,7 +36,7 @@
   </div> -->
 
   <div class="field">
-    <select name="music-type" class="form-control" id="music" [(ngModel)]="event.musicType">
+    <select name="music-type" class="form-control btn btn-blue" id="music" [(ngModel)]="event.musicType">
       <option *ngFor="let music of musics" [value]="music">{{music}}</option>
     </select>
     <label for="music">Type of music</label>
@@ -50,7 +50,7 @@
   </div>
 
   <div class="field submit">
-    <button type="submit" [disabled]="processing">Submit</button>
+    <button type="submit" class="btn btn-blue" [disabled]="processing">Submit</button>
     <div *ngIf="feedbackEnabled && form.invalid">
       <p class="validation">there are errors in the form, please review the fields</p>
     </div>
