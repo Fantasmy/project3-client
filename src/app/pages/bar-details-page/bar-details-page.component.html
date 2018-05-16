@@ -1,17 +1,14 @@
-<p>
-  bar-details-page works!
-</p>
-
+<h1>Bar information</h1>
 <ng-container *ngIf="!bar">
     Loading ...
   </ng-container>
   
   <ng-container *ngIf="bar">
     <app-bar-card [bar]="bar"></app-bar-card>
-    <!-- <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+    <div [ngClass]="{'is-user': user, 'is-anon': anon}">
       <div *ngIf="!!user">
         <a [routerLink]="['/bars', bar._id, 'edit']">Edit</a>
         <button class="btn" (click)="handleDeleteClick()">Delete</button>
       </div>
-    </div> -->
+    </div>
   </ng-container>

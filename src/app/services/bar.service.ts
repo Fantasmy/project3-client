@@ -13,7 +13,23 @@ export class BarService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}/bars/${id}`, options)
+    return this.httpClient.get(`${this.baseUrl}/bars`, options)
+      .toPromise();
+  }
+
+  update(bar): Promise<any> {  // f on update page
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.put(`${this.baseUrl}/bars/${bar._id}`, bar, options)
+      .toPromise();
+  }
+
+  deletetOne(id: string): Promise<any> {  // f on detail page
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.delete(`${this.baseUrl}/bars/${id}`, options)
       .toPromise();
   }
 

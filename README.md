@@ -120,6 +120,7 @@ PAGES:
 - event-edit-page
 - event-details-page
 - bar-details-page
+- bar-edit-page
 
 
 COMPONENTS:

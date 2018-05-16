@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Router, Route } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 
@@ -41,7 +41,7 @@ export class SignupPageComponent implements OnInit {
         strNumber: this.strNumber,
         postCode: this.postCode,
         city: this.city
-      }
+      };
 
       const user = {
         username: this.username,
@@ -51,7 +51,7 @@ export class SignupPageComponent implements OnInit {
         phone: this.phone,
         website: this.website,
         location: this.location
-      }
+      };
 
       // console.log(user.location)
 
@@ -60,7 +60,7 @@ export class SignupPageComponent implements OnInit {
           this.router.navigate(['/']);
         })
         .catch((err) => {
-          this.error = err.error.code; 
+          this.error = err.error.code;
           this.processing = false;
           this.feedbackEnabled = false;
         });

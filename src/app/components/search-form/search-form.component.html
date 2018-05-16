@@ -3,7 +3,7 @@
     
     <!-- <div class="field" [ngClass]="{'has-error': feedbackEnabled && dateField.errors}">
       <label>Date</label>
-      <input type="text" name="date" [(ngModel)]="date" #dateField="ngModel" required minlength="4" [disabled]="processing"/>
+      <input type="date" name="date" [(ngModel)]="date" #dateField="ngModel" required minlength="4" [disabled]="processing"/>
       <div *ngIf="feedbackEnabled && dateField.errors">
         <p *ngIf="dateField.errors.required" class="validation">date required</p>
         <p *ngIf="dateField.errors.minlength" class="validation">date is too short</p>

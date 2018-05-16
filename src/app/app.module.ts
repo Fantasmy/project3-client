@@ -16,6 +16,7 @@ import { EventEditPageComponent } from './pages/event-edit-page/event-edit-page.
 import { EventDetailsPageComponent } from './pages/event-details-page/event-details-page.component';
 import { EventsListPageComponent } from './pages/events-list-page/events-list-page.component';
 import { BarDetailsPageComponent } from './pages/bar-details-page/bar-details-page.component';
+import { BarEditPageComponent } from './pages/bar-edit-page/bar-edit-page.component';
 import { StyleguidePageComponent } from './pages/styleguide-page/styleguide-page.component';
 
 
@@ -45,7 +46,8 @@ const routes: Routes = [
   { path: 'events',  component: EventsListPageComponent,  canActivate: [ InitAuthGuardService ] },
   { path: 'signup',  component: SignupPageComponent,  canActivate: [ RequireAnonGuardService ] },
   { path: 'login',  component: LoginPageComponent,  canActivate: [ RequireAnonGuardService ] },
-  { path: 'profile',  component: BarDetailsPageComponent,  canActivate: [ RequireAnonGuardService ] },
+  { path: 'profile',  component: BarDetailsPageComponent,  canActivate: [ RequireUserGuardService ] },
+  { path: 'profile/:id/edit', component: EventEditPageComponent, canActivate: [ RequireUserGuardService ] },
   { path: 'events/:id', component: EventDetailsPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'events/:id/edit', component: EventEditPageComponent, canActivate: [ RequireUserGuardService ] },
   { path: 'create',  component: EventCreatePageComponent, canActivate: [ RequireUserGuardService ] },
@@ -70,6 +72,7 @@ const routes: Routes = [
     EventListComponent,
     EventsListPageComponent,
     EventCardComponent,
+    BarEditPageComponent,
   ],
   imports: [
     BrowserModule,

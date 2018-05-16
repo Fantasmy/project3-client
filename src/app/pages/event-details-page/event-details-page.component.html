@@ -3,12 +3,15 @@
 </ng-container>
 
 <ng-container *ngIf="event">
+  <h1>Event details</h1>
   <app-event-card [event]="event"></app-event-card>
   <div [ngClass]="{'is-user': user, 'is-anon': anon}">
     <div *ngIf="!!user">
-      <a [routerLink]="['/events', event._id, 'edit']">Edit</a>
-      <button class="btn" (click)="handleDeleteClick()">Delete</button>
+      <a class="btn btn-blue top" [routerLink]="['/events', event._id, 'edit']">Edit</a>
+      <button class="btn btn-blue top" (click)="handleDeleteClick()">Delete</button>
     </div>
   </div>
-  <!-- <app-bar-card [bar]="bar"></app-bar-card> -->
+  <div *ngIf="bar">
+  <app-bar-details-page></app-bar-details-page>
+</div>
 </ng-container>

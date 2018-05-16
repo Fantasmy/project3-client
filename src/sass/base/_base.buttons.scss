@@ -65,12 +65,17 @@
  
  .btn-green {
     @include button-bg(#2ecc71);
- }
- 
- .btn-blue {
+  }
+  
+  .btn-blue {
     @include button-bg(#2286D1);
-    // @include button-bg(#3498db);
- }
+    // @include button-bg(#3498db);  
+  }
+
+  .top {
+    width: 30%;
+    // $transition: none;
+  }
  
  .btn-yellow{
     @include button-bg(#f1c40f);
