@@ -47,7 +47,7 @@ const routes: Routes = [
   { path: 'signup',  component: SignupPageComponent,  canActivate: [ RequireAnonGuardService ] },
   { path: 'login',  component: LoginPageComponent,  canActivate: [ RequireAnonGuardService ] },
   { path: 'profile',  component: BarDetailsPageComponent,  canActivate: [ RequireUserGuardService ] },
-  { path: 'profile/:id/edit', component: EventEditPageComponent, canActivate: [ RequireUserGuardService ] },
+  { path: 'profile/:id/edit', component: BarEditPageComponent, canActivate: [ RequireUserGuardService ] },
   { path: 'events/:id', component: EventDetailsPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'events/:id/edit', component: EventEditPageComponent, canActivate: [ RequireUserGuardService ] },
   { path: 'create',  component: EventCreatePageComponent, canActivate: [ RequireUserGuardService ] },

@@ -2,12 +2,12 @@
   Loading ...
 </ng-container>
 
-<ng-container *ngIf="event">
+<ng-container *ngIf="event && user">
   <h1>Event details</h1>
   <app-event-card [event]="event"></app-event-card>
   <div [ngClass]="{'is-user': user, 'is-anon': anon}">
     <div *ngIf="!!user">
-      <a class="btn btn-blue top" [routerLink]="['/events', event._id, 'edit']">Edit</a>
+      <a class="btn btn-blue top" *ngIf="user._id === event.bar" [routerLink]="['/events', event._id, 'edit']">Edit</a>
       <button class="btn btn-blue top" (click)="handleDeleteClick()">Delete</button>
     </div>
   </div>

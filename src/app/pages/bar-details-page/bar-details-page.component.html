@@ -7,7 +7,7 @@
     <app-bar-card [bar]="bar"></app-bar-card>
     <div [ngClass]="{'is-user': user, 'is-anon': anon}">
       <div *ngIf="!!user">
-        <a [routerLink]="['/bars', bar._id, 'edit']">Edit</a>
+        <a [routerLink]="['/profile', bar._id, 'edit']">Edit</a>
         <button class="btn" (click)="handleDeleteClick()">Delete</button>
       </div>
     </div>

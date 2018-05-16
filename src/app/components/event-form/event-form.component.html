@@ -18,7 +18,7 @@
   </div>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && dateField.errors}">
-    <input type="date" name="date" id="date" [(ngModel)]="date" #dateField="ngModel" required minlength="4" [disabled]="processing"/>
+    <input type="date" name="date" id="date" [(ngModel)]="event.date" #dateField="ngModel" required minlength="4" [disabled]="processing"/>
     <label for="date">Date</label>
     <div *ngIf="feedbackEnabled && dateField.errors">
       <p *ngIf="dateField.errors.required" class="validation">date required</p>
