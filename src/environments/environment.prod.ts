@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://livebeats2app.herokuapp.com'
+  apiUrl: 'https://livebeats2.herokuapp.com'
 };
