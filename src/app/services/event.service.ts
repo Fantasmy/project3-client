@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class EventService {
 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = environment.apiUrl + '/events';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -13,7 +14,7 @@ export class EventService {
     const options = {
       withCredentials: true // the client will send cookies, because cors doesn't do it automatically
     };
-    return this.httpClient.get(`${this.baseUrl}/events`, options) // events is the backend route
+    return this.httpClient.get(`${this.baseUrl}`, options) // events is the backend route
       .toPromise();
   }
 
@@ -21,7 +22,7 @@ export class EventService {
     const options = {
       withCredentials: true // the client will send cookies, because cors doesn't do it automatically
     };
-    return this.httpClient.get(`${this.baseUrl}/events/by-type/${musicType}`, options) // events is the backend route
+    return this.httpClient.get(`${this.baseUrl}/by-type/${musicType}`, options) // events is the backend route
       .toPromise();
   }
 
@@ -29,7 +30,7 @@ export class EventService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}/events/${id}`, options)
+    return this.httpClient.get(`${this.baseUrl}/${id}`, options)
       .toPromise();
   }
 
@@ -37,7 +38,7 @@ export class EventService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.post(`${this.baseUrl}/events`, event, options) // events url and the event model object
+    return this.httpClient.post(`${this.baseUrl}`, event, options) // events url and the event model object
       .toPromise();
   }
 
@@ -46,7 +47,7 @@ export class EventService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.put(`${this.baseUrl}/events/${event._id}`, event, options)
+    return this.httpClient.put(`${this.baseUrl}/${event._id}`, event, options)
       .toPromise();
   }
 
@@ -54,7 +55,7 @@ export class EventService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.delete(`${this.baseUrl}/events/${id}`, options)
+    return this.httpClient.delete(`${this.baseUrl}/${id}`, options)
       .toPromise();
   }
 

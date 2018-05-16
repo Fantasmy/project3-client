@@ -28,19 +28,19 @@
         <div>
           <div class="col title">
             <h3>Venue:</h3>
-              <p>{{bar.venue}}</p>
+              <p>{{event.bar.venue}}</p>
           </div>
           <div class="col music">
             <h3>Phone:</h3>
-              <p>{{bar.phone}}</p>
+              <p>{{event.bar.phone}}</p>
           </div>
           <div class="col description">
             <h3>Wesite:</h3>
-              <p>{{bar.website}}</p>
+              <p>{{event.bar.website}}</p>
           </div>
           <div class="col description">
               <h3>Address:</h3>
-              <p>{{bar.location.street}}, {{bar.location.strNumber}}, {{bar.location.postCode}}, {{bar.location.city}}</p>
+              <p>{{event.bar.location.street}}, {{bar.location.strNumber}}, {{bar.location.postCode}}, {{bar.location.city}}</p>
           </div>
         </div>
       </div>
@@ -48,5 +48,3 @@
     </div>
   </div>
 </div>
-
-{{bar | json}}

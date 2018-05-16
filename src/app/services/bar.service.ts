@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class BarService {
 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = environment.apiUrl + '/bars';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -13,7 +14,7 @@ export class BarService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.get(`${this.baseUrl}/bars`, options)
+    return this.httpClient.get(`${this.baseUrl}`, options)
       .toPromise();
   }
 
@@ -21,7 +22,7 @@ export class BarService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.put(`${this.baseUrl}/bars/${bar._id}`, bar, options)
+    return this.httpClient.put(`${this.baseUrl}/${bar._id}`, bar, options)
       .toPromise();
   }
 
@@ -29,7 +30,7 @@ export class BarService {
     const options = {
       withCredentials: true
     };
-    return this.httpClient.delete(`${this.baseUrl}/bars/${id}`, options)
+    return this.httpClient.delete(`${this.baseUrl}/${id}`, options)
       .toPromise();
   }
 

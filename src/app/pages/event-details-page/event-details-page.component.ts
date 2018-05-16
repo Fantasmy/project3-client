@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EventDetailsPageComponent implements OnInit {
 
+  bar: Object;
   event: Object;
   idEvent: string;
   user: Object;
