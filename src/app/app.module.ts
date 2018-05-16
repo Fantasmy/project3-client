@@ -24,6 +24,7 @@ import { StyleguidePageComponent } from './pages/styleguide-page/styleguide-page
 import { EventFormComponent } from './components/event-form/event-form.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { BarCardComponent } from './components/bar-card/bar-card.component';
+import { BarInfoCardComponent } from './components/bar-info-card/bar-info-card.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { EventListComponent } from './components/event-list/event-list.component';
 
@@ -73,6 +74,7 @@ const routes: Routes = [
     EventsListPageComponent,
     EventCardComponent,
     BarEditPageComponent,
+    BarInfoCardComponent,
   ],
   imports: [
     BrowserModule,

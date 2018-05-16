@@ -125,6 +125,7 @@ PAGES:
 
 COMPONENTS:
 - bar-card
+- bar-info-card
 - event-form
 - search-form
 - events-list

@@ -1,0 +1,52 @@
+<!-- <ng-container *ngIf="!event">
+  Loading ...
+</ng-container>
+
+<ng-container *ngIf="user">
+  <app-event-card [event]="event"></app-event-card>
+  <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+    <div *ngIf="!!user">
+      <a class="btn btn-blue top" *ngIf="user._id === event.bar" [routerLink]="['/events', event._id, 'edit']">Edit</a>
+      <button class="btn btn-blue top" (click)="handleDeleteClick()">Delete</button>
+    </div>
+  </div>
+</ng-container>
+ -->
+
+<div class="container">
+  <div class="wrapper">
+    <div class="grid center">
+
+      <div *ngIf="!bar">
+        <h1>Loading ....</h1>
+      </div>
+
+      <div class="card" *ngIf="bar">
+        <div class="col pic">
+          <img src="{{bar.imgUrl}}" />
+        </div>
+        <div>
+          <div class="col title">
+            <h3>Venue:</h3>
+              <p>{{bar.venue}}</p>
+          </div>
+          <div class="col music">
+            <h3>Phone:</h3>
+              <p>{{bar.phone}}</p>
+          </div>
+          <div class="col description">
+            <h3>Wesite:</h3>
+              <p>{{bar.website}}</p>
+          </div>
+          <div class="col description">
+              <h3>Address:</h3>
+              <p>{{bar.location.street}}, {{bar.location.strNumber}}, {{bar.location.postCode}}, {{bar.location.city}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{{bar | json}}
