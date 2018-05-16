@@ -133,7 +133,7 @@ a {
 
 /// ---- loading ---- ///
 
-#loading {left:calc(50% - 100px);top:calc(50% - 25px);z-index:9999}
+#loading {left:calc(50% - 100px);top:calc(25% - 25px);z-index:9999; height: 45px}
 
 .ld-l {opacity:0;animation: ld-in 3s 0.0s ease infinite;}
 .ld-o {opacity:0;animation: ld-in 3s 0.1s ease infinite;}

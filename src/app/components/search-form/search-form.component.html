@@ -1,45 +1,45 @@
 <div class="grid center">
-  <form (ngSubmit)="searchEvents(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
-    
-    <!-- <div class="field" [ngClass]="{'has-error': feedbackEnabled && dateField.errors}">
-      <label>Date</label>
-      <input type="date" name="date" [(ngModel)]="date" #dateField="ngModel" required minlength="4" [disabled]="processing"/>
-      <div *ngIf="feedbackEnabled && dateField.errors">
-        <p *ngIf="dateField.errors.required" class="validation">date required</p>
-        <p *ngIf="dateField.errors.minlength" class="validation">date is too short</p>
+    <form (ngSubmit)="searchEvents(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+      
+      <!-- <div class="field" [ngClass]="{'has-error': feedbackEnabled && dateField.errors}">
+        <label>Date</label>
+        <input type="date" name="date" [(ngModel)]="date" #dateField="ngModel" required minlength="4" [disabled]="processing"/>
+        <div *ngIf="feedbackEnabled && dateField.errors">
+          <p *ngIf="dateField.errors.required" class="validation">date required</p>
+          <p *ngIf="dateField.errors.minlength" class="validation">date is too short</p>
+        </div>
       </div>
-    </div>
-    
-    <div class="field" [ngClass]="{'has-error': feedbackEnabled && timeField.errors}">
-      <label>Time</label>
-      <input type="text" name="time" [(ngModel)]="time" #timeField="ngModel" required minlength="4" [disabled]="processing"/>
-      <div *ngIf="feedbackEnabled && timeField.errors">
-        <p *ngIf="timeField.errors.required" class="validation">time required</p>
-        <p *ngIf="timeField.errors.minlength" class="validation">time is too short</p>
-      </div>
-    </div> -->
-    
-    <div>
-      <h2>
-        What do you feel for today?
-      </h2>
-      <!-- <div class="col title">
-        <label>What do you feel for today?</label>
+      
+      <div class="field" [ngClass]="{'has-error': feedbackEnabled && timeField.errors}">
+        <label>Time</label>
+        <input type="text" name="time" [(ngModel)]="time" #timeField="ngModel" required minlength="4" [disabled]="processing"/>
+        <div *ngIf="feedbackEnabled && timeField.errors">
+          <p *ngIf="timeField.errors.required" class="validation">time required</p>
+          <p *ngIf="timeField.errors.minlength" class="validation">time is too short</p>
+        </div>
       </div> -->
-      <div class="col search">
-        <select name="music-type" class="btn btn-blue" id="music" [(ngModel)]="selectedMusic">
-          <option *ngFor="let music of musics" [value]="music">{{music}}</option>
-        </select>
+      
+      <div>
+        <h2>
+          What do you feel for today?
+        </h2>
+        <!-- <div class="col title">
+          <label>What do you feel for today?</label>
+        </div> -->
+        <div class="col search">
+          <select name="music-type" class="btn btn-blue" id="music" [(ngModel)]="selectedMusic" (ngModelChange)="selectionChanged()">
+            <option *ngFor="let music of musics" [value]="music">{{music}}</option>
+          </select>
+        </div>
+        <div class="col search">
+          <button type="submit" class="btn btn-blue" [disabled]="processing">Search</button>
+        </div>
+        <div *ngIf="feedbackEnabled && form.invalid">
+          <p class="validation">there are errors in the form, please review the fields</p>
+          <!-- </div> -->
+        </div>
       </div>
-      <div class="col search">
-        <button type="submit" class="btn btn-blue" [disabled]="processing">Search</button>
-      </div>
-      <div *ngIf="feedbackEnabled && form.invalid">
-        <p class="validation">there are errors in the form, please review the fields</p>
-        <!-- </div> -->
-      </div>
-    </div>
-    <!-- <div> -->
-  </form>
-</div>
-<!-- -{{event | json}}- -->
+      <!-- <div> -->
+    </form>
+  </div>
+  <!-- -{{event | json}}- -->

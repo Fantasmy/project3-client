@@ -6,7 +6,7 @@
     <div class="wrapper">
       <div class="grid center">
   
-        <div *ngIf="!event" class='container'>
+        <div *ngIf="!event">
           <svg id="loading">
 <g>
 	<path class="ld-l" fill="#39C0C4" d="M43.6,33.2h9.2V35H41.6V15.2h2V33.2z"/>
@@ -59,3 +59,5 @@
       </div>
     </div>
   </div>
+
+  {{event | json}}

@@ -16,8 +16,12 @@ export class SearchFormComponent implements OnInit {
 
   @Output() submitdata: EventEmitter<any> = new EventEmitter();
 
-  musics = ['classic', 'folklore', 'jazz', 'pop', 'rap', 'rock', 'other'];
+  @Input() musics = ['classic', 'folklore', 'jazz', 'pop', 'rap', 'rock', 'other'];
   selectedMusic: string;
+
+//   selectionChanged() {
+//     this.submitdata.emit(this.selectedMusic);
+// }
 
   constructor(private eventService: EventService, private router: Router ) {
     this.event = {};
@@ -34,6 +38,7 @@ export class SearchFormComponent implements OnInit {
         .then((data) => {
           // setTimeout(() => {
             this.event = data;
+            this.submitdata.emit(this.event);
           // }, 1500);
         });
     }

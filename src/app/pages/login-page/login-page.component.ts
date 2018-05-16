@@ -13,7 +13,7 @@ export class LoginPageComponent implements OnInit {
   error = null;
   processing = false;
   username: String;
-  password: String;  
+  password: String;
 
   constructor(private router: Router, private authService: AuthService) { }
 
