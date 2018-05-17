@@ -15,7 +15,7 @@
  <div class="container">
     <div class="wrapper">
       <div class="grid center">
-  
+<!--   
         <div *ngIf="!bar">
             <svg id="loading">
                 <g>
@@ -42,7 +42,7 @@
                 </g>
                 </svg>
                 
-        </div>
+        </div> -->
   
         <div class="card" *ngIf="bar">
           <div class="col pic">
@@ -61,10 +61,10 @@
               <h3>Wesite:</h3>
                 <p>{{bar.website}}</p>
             </div>
-            <!-- <div class="col description">
+            <div class="col description">
                 <h3>Address:</h3>
                 <p>{{bar.location.street}} {{bar.location.strNumber}}, {{bar.location.postCode}}, {{bar.location.city}}</p>
-            </div> -->
+            </div>
           </div>
         </div>
   

@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class BarInfoCardComponent implements OnInit {
 
   @Input() bar: Object;
+  @Input() location: Object;
 
   constructor() { }
 
