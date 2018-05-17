@@ -1,11 +1,6 @@
 <h1> Welcome to liveBeats!</h1>
 <div class="container">
-  <app-search-form 
-  [feedbackEnabled]="feedbackEnabled" 
-  [processing]="processing" 
-  [error]="error" 
-  (submitdata)="handleSearchForm($event)">
-  </app-search-form>
+  <app-search-form (submitdata)="handleSearchForm($event)"></app-search-form>
   <div class="container">
     <div class="wrapper">
       <div class="grid center">

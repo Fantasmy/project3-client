@@ -8,24 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit {
-
-  @Input() feedbackEnabled: boolean;  // checks form and blocks when fnished submit
-  @Input() error: string;
-  @Input() processing: boolean;
-  @Input() events: any;
-
   @Output() submitdata: EventEmitter<any> = new EventEmitter(); // submitdata is the function
 
   @Input() musics = ['classic', 'folklore', 'jazz', 'pop', 'rap', 'rock', 'other'];
   selectedMusic: string;
 
-//   selectionChanged() {
-//     this.submitdata.emit(this.selectedMusic);
-// }
-
-  constructor(private eventService: EventService, private router: Router ) {
-    this.events = [];
-  }
+  constructor(private eventService: EventService, private router: Router ) { }
 
   ngOnInit() {}
 
@@ -33,10 +21,7 @@ export class SearchFormComponent implements OnInit {
     if (form.valid) {
       this.eventService.listAllByType(this.selectedMusic)
         .then((data) => {
-          // setTimeout(() => {
-            this.events = data;
-            this.submitdata.emit(this.events);
-          // }, 1500);
+            this.submitdata.emit(data);
         });
     }
   }
