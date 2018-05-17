@@ -7,9 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EventListComponent implements OnInit {
 
-  events: Array<any>;
 
-  @Input() event: Object;
+  @Input() event: Object; // only one event of the events iteration from homepage
 
   constructor() { }
 

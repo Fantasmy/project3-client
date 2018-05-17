@@ -7,13 +7,19 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  @Input() event: Object;
-
-  @Output() events: Object;
-  // @Output() events: Array<any>;
+ feedbackEnabled: boolean;  // checks form and blocks when fnished submit
+ error: string;
+ processing: boolean;
+ events: Array<any>;
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  handleSearchForm(eventsSearched) { // events from search component, from emitter
+    this.processing = true;
+    this.events = eventsSearched;
+  }
+
 }

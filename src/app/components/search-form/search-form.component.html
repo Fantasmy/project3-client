@@ -1,5 +1,5 @@
 <div class="grid center">
-    <form (ngSubmit)="searchEvents(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+    <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
       
       <!-- <div class="field" [ngClass]="{'has-error': feedbackEnabled && dateField.errors}">
         <label>Date</label>
@@ -27,7 +27,8 @@
           <label>What do you feel for today?</label>
         </div> -->
         <div class="col search">
-          <select name="music-type" class="btn btn-blue" id="music" [(ngModel)]="selectedMusic" (ngModelChange)="selectionChanged()">
+          <!-- <select name="music-type" class="btn btn-blue" id="music" [(ngModel)]="selectedMusic" (ngModelChange)="selectionChanged()"> -->
+            <select name="music-type" class="btn btn-blue" id="music" [(ngModel)]="selectedMusic">
             <option *ngFor="let music of musics" [value]="music">{{music}}</option>
           </select>
         </div>
