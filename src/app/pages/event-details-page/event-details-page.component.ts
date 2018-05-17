@@ -24,7 +24,6 @@ export class EventDetailsPageComponent implements OnInit {
     this.user = this.authService.getUser();
     this.activatedRoute.params.subscribe((params) => {
       this.idEvent = params.id;
-     // const id = params.id;  // this params.id comes from the app event/:id
       this.eventService.getOne(this.idEvent)
         .then((data) => {
             this.event = data;
