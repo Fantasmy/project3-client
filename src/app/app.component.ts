@@ -10,7 +10,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements OnInit {
   title = 'app';
   loading = true;
-  anon: boolean; // : -> typescript declaration
+  anon: boolean;
   user: any;
 
   constructor(

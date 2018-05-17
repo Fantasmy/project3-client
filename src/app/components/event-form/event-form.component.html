@@ -1,6 +1,7 @@
-<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+<form id="form" (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
-
+  <h1>Publish a new event</h1>
+  
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && imageField.errors}">
     <input type="text" name="image" id="image" [(ngModel)]="event.imgUrl" #imageField="ngModel" [disabled]="processing" placeholder="Image url"/>
     <label for="image">Image</label>

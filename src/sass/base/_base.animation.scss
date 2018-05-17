@@ -22,6 +22,11 @@
 
 form {
   margin: 2em 0;
+
+  @media only screen and (min-width: 900px) {
+  width: 30%;
+  margin: auto;
+  }
 }
 /**
 * Make the field a flex-container, reverse the order so label is on top.
@@ -42,6 +47,7 @@ label, input {
 
 input {
   font-size: $font-large;
+  text-align: center;
   border: 0;
   border-bottom: 1px solid #ccc;
   font-family: inherit;
@@ -74,6 +80,7 @@ input:placeholder-shown + label {
   text-overflow: ellipsis;
   transform-origin: left bottom;
   transform: translate(0, 2.125rem) scale(1.5);
+  text-align: center;
 }
 /**
 * By default, the placeholder should be transparent. Also, it should 
@@ -98,13 +105,8 @@ input:not(:placeholder-shown) + label,
 input:focus + label {
   transform: translate(0, 0) scale(1);
   cursor: pointer;
+  text-align: left;
 }
-
-
-// --- loading --- //
-
-
-
 
 
 // -- frame ul ---//
