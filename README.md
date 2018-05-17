@@ -31,10 +31,7 @@ Project 2 (liveBeats). Jenny. EXPRESS + ANGULAR
 
 EXPRESS
 
-MC (data models, controllers/routes)
-
 DATA MODELS
-
 
 Bar:
 - _id: objectid
@@ -59,13 +56,6 @@ Bar:
 		required: true}
 
 
-For maps:
-- location: {
-		type {
-			Type: String,
-			 (Address) → Coordinates: [Number]}
-}
-
 Event:
 - bar_host: ObjectId 
 - image: srcUrl
@@ -74,6 +64,7 @@ Event:
 - time: time
 - type: enum: [“rock”, “rap”, “ska”, “classic”,”folklore”, “others”]
 - description: string
+- bar: ObjectId, ref: 'Bar'
 
 
 
@@ -112,15 +103,16 @@ Delete /events /:id
 
 ANGULAR (controllers?)
 
-PAGES:
-- home-page
-- signup-page
-- login-page
-- event-create-page
-- event-edit-page
-- event-details-page
-- bar-details-page
-- bar-edit-page
+PAGES -> routes:
+- home-page -> 'home'
+- signup-page -> 'signup'
+- login-page -> 'login'
+- event-create-page -> 'create'
+- event-edit-page -> 'events/:id/edit'
+- event-details-page -> 'events/:id'
+- events-list-page -> 'events'
+- bar-details-page -> 'profile'
+- bar-edit-page -> 'profile/:id/edit'
 
 
 COMPONENTS:
@@ -160,9 +152,9 @@ GUARDS SERVICES:
 
 
 BACKLOG (TODO after the MVP is done)
-- maps with address instead of coordinates
+- maps
 - search from day A to day B events
 - upload images
-- user login, to place likes on the bars or have favorite bars
-- list the bar’s event
+- add the list of the bar’s own events
 - mail suggestions
+- user login, to place likes on the bars or have favorite bars
