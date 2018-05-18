@@ -31,10 +31,10 @@ export class BarEditPageComponent implements OnInit {
   });
   }
 
-  handleSubmitForm(bar) {
-    this.barService.update(bar)
+  submitForm() {
+    this.barService.update(this.bar)
     .then((data) => {
-      this.router.navigate(['/bars', this.bar._id]);
+      this.router.navigate(['/profile']);
       // this.movie = data;
       // this.processing = false;
     })
